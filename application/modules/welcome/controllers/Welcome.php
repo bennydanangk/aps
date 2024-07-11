@@ -12,4 +12,7 @@ class Welcome extends MY_Controller {
 	function login() {
 		$this->load->view('login');
 	}
+	function template() {
+		$this->load->view('template');
+	}
 }
