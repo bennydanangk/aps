@@ -6,4 +6,7 @@ class M_api extends CI_Model{
         $this->db->limit(10);
 		return $this->db->get_where($table,$where);
 	}	
+
+
+
 }
