@@ -23,29 +23,9 @@ class Dashboard extends MY_Controller {
 			$data['config'] = $this->api->config();
 			$data['nama_pengguna'] = $this->session->userdata('nama_pegawai');
 			// $this->load->view('template',$data);
+			$id_role = $this->session->userdata('id_role');
 
-
-			$data['menu'] = '
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Mailbox
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">          
-
-              <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-			  
-            </ul>
-          </li>
-';
+			$data['menu'] = $this->api->menu($id_role);
 
 			$this->load->view('backend/a_header',$data);
 			$this->load->view('backend/b_sidebar',$data);
